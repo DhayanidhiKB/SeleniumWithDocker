@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 
 public class FlightSearchPage extends AbstractPage {
 
-    @FindBy(id="passengers")
+    @FindBy(id = "passengers")
     private WebElement passengerSelect;
 
-    @FindBy(id="search-flights")
+    @FindBy(id = "search-flights")
     private WebElement searchFlightsButton;
 
     public FlightSearchPage(WebDriver driver) {
@@ -25,12 +25,12 @@ public class FlightSearchPage extends AbstractPage {
         return this.passengerSelect.isDisplayed();
     }
 
-    public void selectPassenger(String noOfPassengers){
-        Select passenger=new Select(this.passengerSelect);
+    public void selectPassenger(String noOfPassengers) {
+        Select passenger = new Select(this.passengerSelect);
         passenger.selectByValue(noOfPassengers);
     }
 
-    public void searchFlights(){
+    public void searchFlights() {
         this.searchFlightsButton.click();
     }
 }
