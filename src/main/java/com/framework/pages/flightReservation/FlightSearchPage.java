@@ -7,12 +7,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.awt.*;
+
 public class FlightSearchPage extends AbstractPage {
 
     @FindBy(id = "passengers")
     private WebElement passengerSelect;
 
-    @FindBy(id = "search-flights")
+    @FindBy(xpath = "//button[@id='search-flights']")
     private WebElement searchFlightsButton;
 
     public FlightSearchPage(WebDriver driver) {
@@ -31,6 +33,7 @@ public class FlightSearchPage extends AbstractPage {
     }
 
     public void searchFlights() {
+        this.wait.until(ExpectedConditions.visibilityOf(this.searchFlightsButton));
         this.searchFlightsButton.click();
     }
 }

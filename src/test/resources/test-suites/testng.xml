@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Flight Reservation">
+    <test name="passenger-count-1">
+        <parameter name="noOfPassengers" value="1"/>
+        <classes>
+            <class name="org.seleniumdocker.tests.flightReservation.FlightReservationTest"/>
+        </classes>
+    </test>
+    <test name="passenger-count-2">
+        <parameter name="noOfPassengers" value="2"/>
+        <classes>
+            <class name="org.seleniumdocker.tests.flightReservation.FlightReservationTest"/>
+        </classes>
+    </test>
+    <test name="passenger-count-3">
+        <parameter name="noOfPassengers" value="3"/>
+        <classes>
+            <class name="org.seleniumdocker.tests.flightReservation.FlightReservationTest"/>
+        </classes>
+    </test>
+    <test name="passenger-count-4">
+        <parameter name="noOfPassengers" value="4"/>
+        <classes>
+            <class name="org.seleniumdocker.tests.flightReservation.FlightReservationTest"/>
+        </classes>
+    </test>
+</suite>
