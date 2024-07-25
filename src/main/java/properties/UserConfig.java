@@ -7,7 +7,7 @@ public final class UserConfig {
     private UserConfig() {
     }
 
-   @Getter
+    @Getter
     static Properties properties;
 
     static {

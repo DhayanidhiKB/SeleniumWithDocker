@@ -3,24 +3,28 @@
 <suite name="Flight Reservation">
     <test name="passenger-count-1">
         <parameter name="noOfPassengers" value="1"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.seleniumdocker.tests.flightReservation.FlightReservationTest"/>
         </classes>
     </test>
     <test name="passenger-count-2">
         <parameter name="noOfPassengers" value="2"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.seleniumdocker.tests.flightReservation.FlightReservationTest"/>
         </classes>
     </test>
     <test name="passenger-count-3">
         <parameter name="noOfPassengers" value="3"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.seleniumdocker.tests.flightReservation.FlightReservationTest"/>
         </classes>
     </test>
     <test name="passenger-count-4">
         <parameter name="noOfPassengers" value="4"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.seleniumdocker.tests.flightReservation.FlightReservationTest"/>
         </classes>

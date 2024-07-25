@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({"file:${user.dir}/resources/FlightReservation.properties",
-                 "file:${user.dir}/resources/URLFlightReservation.properties"})
+        "file:${user.dir}/resources/URLFlightReservation.properties"})
 
 
 public interface Properties extends Config {
