@@ -4,30 +4,22 @@ import com.framework.pages.flightReservation.FlightSearchPage;
 import com.framework.pages.flightReservation.FlightSelectionPage;
 import com.framework.pages.flightReservation.RegisterationConfirmationPage;
 import com.framework.pages.flightReservation.RegisterationPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.seleniumdocker.AbstractTest;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import properties.UserConfig;
 
 
-public class FlightReservationTest {
+public class FlightReservationTest extends AbstractTest {
 
-    private WebDriver driver;
     private String noOfPassengers;
 
     @BeforeTest
     @Parameters({"noOfPassengers"})
-    public void setup(String noOfPassengers) {
+    public void ReservationPageSetup(String noOfPassengers) {
         this.noOfPassengers = noOfPassengers;
-        WebDriverManager.chromedriver().setup();
-        this.driver = new ChromeDriver();
-        this.driver.manage().window().maximize();
     }
 
     @Test
@@ -62,11 +54,6 @@ public class FlightReservationTest {
         Assert.assertTrue(selectionPage.isAt());
         selectionPage.selectFlights();
         selectionPage.confirmFlights();
-    }
-
-    @AfterTest
-    public void tearDown(){
-        this.driver.quit();
     }
 
 }
