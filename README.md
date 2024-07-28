@@ -1,6 +1,5 @@
 Selenium Automation Framework
 
-Overview
 This repository contains a Selenium Automation Framework designed to run both inside Docker containers and locally on Chrome. It provides a flexible and scalable solution for automating web testing across different environments.
 
 1)Docker Integration:
