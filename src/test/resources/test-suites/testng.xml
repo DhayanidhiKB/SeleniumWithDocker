@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Flight Reservation">
+<suite name="Flight Reservation" parallel="tests" thread-count="4">
     <test name="passenger-count-1">
         <parameter name="noOfPassengers" value="1"/>
         <parameter name="browser" value="chrome"/>

@@ -95,7 +95,7 @@
             <selenium.grid.enabled>true</selenium.grid.enabled>
           </systemPropertyVariables>
           <suiteXmlFiles>
-            <file>test-suite.xml</file>
+            <file>src/test/resources/test-suites/testng.xml</file>
           </suiteXmlFiles>
           <threadCount>1</threadCount>
           <reportsDirectory>target/test-output</reportsDirectory>
@@ -138,7 +138,7 @@
         </executions>
       </plugin>
       <!-- To copy resources into the output directory -->
-      <plugin>
+     <!-- <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>${maven.resources.plugin}</version>
@@ -159,7 +159,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
     </plugins>
   </build>
 </project>

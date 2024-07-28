@@ -1,6 +1,7 @@
 package org.seleniumdocker;
 
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -8,13 +9,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+import properties.UserConfig;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public abstract class AbstractTest {
 
@@ -39,12 +42,17 @@ public abstract class AbstractTest {
         } else {
             capabilities = new FirefoxOptions();
         }
-        return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+        return new RemoteWebDriver(new URL(UserConfig.getProperties().remoteURL()), capabilities);
     }
 
     private WebDriver getLocalDriver() {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
+    }
+
+    @AfterMethod
+    public void timeout() {
+        Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(10));
     }
 
     @AfterTest
